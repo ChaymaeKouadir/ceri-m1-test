@@ -22,7 +22,7 @@ public final class IPokemonMetadataProviderTest {
 		assertEquals(ipmp.getPokemonMetadata(0).getDefense(), pmd1.getDefense());
 		assertEquals(ipmp.getPokemonMetadata(0).getStamina(), pmd1.getStamina());
 		
-		//pokemon2
+		//pokemon2 :
 		assertEquals(ipmp.getPokemonMetadata(133).getIndex(), pmd2.getIndex());
 		assertEquals(ipmp.getPokemonMetadata(133).getName(), pmd2.getName());
 		assertEquals(ipmp.getPokemonMetadata(133).getAttack(), pmd2.getAttack());
