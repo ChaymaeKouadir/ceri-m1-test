@@ -31,7 +31,7 @@ public final class IPokemonMetadataProviderTest {
 
 	@Test(expected = PokedexException.class)
 	public void execptionIndex() throws PokedexException {
-		ipmp.getPokemonMetadata(0);	
+		ipmp.getPokemonMetadata(0);
 	}
 	@Test(expected = PokedexException.class)
 	public void execptionIndexOut() throws PokedexException {
