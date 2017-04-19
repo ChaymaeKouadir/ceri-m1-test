@@ -44,8 +44,8 @@ public final class IPokemonMetadataProviderTest {
 		MockitoAnnotations.initMocks(this);
 		Mockito.when(ipmp.getPokemonMetadata(0)).thenReturn(pmd1);
 		Mockito.when(ipmp.getPokemonMetadata(1)).thenReturn(pmd2);
-		Mockito.when(ipmp.getPokemonMetadata(2)).thenThrow(new PokedexException("Index inexistant"));
-		Mockito.when(ipmp.getPokemonMetadata(3)).thenThrow(new PokedexException("Index outOfBounds"));
+		Mockito.when(ipmp.getPokemonMetadata(2)).thenThrow(new PokedexException("Error : Index doesnt exist "));
+		Mockito.when(ipmp.getPokemonMetadata(3)).thenThrow(new PokedexException("Error: Index outOfBounds"));
 		
 	}
 	
