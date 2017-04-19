@@ -9,8 +9,9 @@ public final class IPokemonMetadataProviderTest {
 	
 	@Mock private IPokemonMetadataProvider ipmp;
 	
-	private PokemonMetadata pmd1 = new PokemonMetadata(0, "pokemon1", 1, 2, 3);
-	private PokemonMetadata pmd2 = new PokemonMetadata(1, "pokemon2", 4, 5, 6);
+	private PokemonMetadata pmd1 = new PokemonMetadata(0, "Bulbizarre", 126, 126, 90);
+	private PokemonMetadata pmd2 = new PokemonMetadata(133, "Aquali", 186, 168, 260);
+
 	
 	@Test
 	public void getPokemonMetadataTest() throws PokedexException {
@@ -31,21 +32,22 @@ public final class IPokemonMetadataProviderTest {
 
 	@Test(expected = PokedexException.class)
 	public void execptionIndex() throws PokedexException {
-		ipmp.getPokemonMetadata(0);
+		ipmp.getPokemonMetadata(-2);
 	}
 	@Test(expected = PokedexException.class)
 	public void execptionIndexOut() throws PokedexException {
-		ipmp.getPokemonMetadata(1);	
+		ipmp.getPokemonMetadata(155);	
 	}
 	
 	@Before
 	public void setUp() throws PokedexException {
 		
 		MockitoAnnotations.initMocks(this);
+		
 		Mockito.when(ipmp.getPokemonMetadata(0)).thenReturn(pmd1);
-		Mockito.when(ipmp.getPokemonMetadata(1)).thenReturn(pmd2);
-		Mockito.when(ipmp.getPokemonMetadata(2)).thenThrow(new PokedexException("Error : Index doesnt exist "));
-		Mockito.when(ipmp.getPokemonMetadata(3)).thenThrow(new PokedexException("Error: Index outOfBounds"));
+		Mockito.when(ipmp.getPokemonMetadata(133)).thenReturn(pmd2);
+		Mockito.when(ipmp.getPokemonMetadata(-2)).thenThrow(new PokedexException("Error : Index doesnt exist "));
+		Mockito.when(ipmp.getPokemonMetadata(155)).thenThrow(new PokedexException("Error: Index outOfBounds"));
 		
 	}
 	
