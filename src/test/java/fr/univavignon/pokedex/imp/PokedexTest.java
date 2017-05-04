@@ -1,5 +1,8 @@
 package fr.univavignon.pokedex.imp;
 
-public class PokedexTest {
+import fr.univavignon.pokedex.api.IPokedexTest;
+
+public class PokedexTest extends IPokedexTest {
+	
 
 }

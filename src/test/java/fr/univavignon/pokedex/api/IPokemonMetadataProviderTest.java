@@ -7,7 +7,7 @@ import java.io.IOException;
 import org.junit.*;
 import org.mockito.*;
 
-public final class IPokemonMetadataProviderTest {
+public class IPokemonMetadataProviderTest {
 	
 	@Mock private IPokemonMetadataProvider ipmp;
 	

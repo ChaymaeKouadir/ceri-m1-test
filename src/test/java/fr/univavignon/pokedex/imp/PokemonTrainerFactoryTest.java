@@ -1,5 +1,8 @@
 package fr.univavignon.pokedex.imp;
 
-public class PokemonTrainerFactoryTest {
+import fr.univavignon.pokedex.api.IPokemonTrainerFactoryTest;
+
+
+public class PokemonTrainerFactoryTest extends IPokemonTrainerFactoryTest {
 
 }
