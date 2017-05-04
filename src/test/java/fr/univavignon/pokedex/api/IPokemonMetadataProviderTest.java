@@ -16,12 +16,12 @@ public class IPokemonMetadataProviderTest {
 	
 
 	@Test(expected=PokedexException.class)
-	public void testPokemonMetadata0NotFoundException() throws PokedexException {
+	public void metadataException1() throws PokedexException {
 		ipmp.getPokemonMetadata(-1);
 	}
 	
 	@Test(expected=PokedexException.class)
-	public void testPokemonMetadata151NotFoundException() throws PokedexException {
+	public void metadataException2() throws PokedexException {
 		ipmp.getPokemonMetadata(151);
 	}
 	
