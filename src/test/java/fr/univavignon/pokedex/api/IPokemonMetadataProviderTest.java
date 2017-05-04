@@ -12,7 +12,7 @@ public class IPokemonMetadataProviderTest {
 	@Mock protected IPokemonMetadataProvider ipmp;
 	
 	private PokemonMetadata pmd1 = new PokemonMetadata(0, "Bulbasaur", 126, 126, 90);
-	private PokemonMetadata pmd2 = new PokemonMetadata(133, "Aquali", 186, 168, 260);
+	private PokemonMetadata pmd2 = new PokemonMetadata(133, "Vaporeon", 186, 168, 260);
 
 	
 	@Test
