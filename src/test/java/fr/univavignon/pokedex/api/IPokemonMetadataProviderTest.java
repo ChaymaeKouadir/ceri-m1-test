@@ -2,43 +2,27 @@ package fr.univavignon.pokedex.api;
 
 import static org.junit.Assert.assertEquals;
 
-import java.io.IOException;
 
 import org.junit.*;
 import org.mockito.*;
 
 public class IPokemonMetadataProviderTest {
 	
-	@Mock private IPokemonMetadataProvider ipmp;
+	@Mock protected IPokemonMetadataProvider ipmp;
 	
-	private PokemonMetadata pmd1 = new PokemonMetadata(0, "Bulbizarre", 126, 126, 90);
+	private PokemonMetadata pmd1 = new PokemonMetadata(0, "Bulbasaur", 126, 126, 90);
 	private PokemonMetadata pmd2 = new PokemonMetadata(133, "Aquali", 186, 168, 260);
 
 	
-	@Test
-	public void getPokemonMetadataTest() throws PokedexException {
-		//pokemon1 :
-		assertEquals(ipmp.getPokemonMetadata(0).getIndex(), pmd1.getIndex());
-		assertEquals(ipmp.getPokemonMetadata(0).getName(), pmd1.getName());
-		assertEquals(ipmp.getPokemonMetadata(0).getAttack(), pmd1.getAttack());
-		assertEquals(ipmp.getPokemonMetadata(0).getDefense(), pmd1.getDefense());
-		assertEquals(ipmp.getPokemonMetadata(0).getStamina(), pmd1.getStamina());
-		
-		//pokemon2 :
-		assertEquals(ipmp.getPokemonMetadata(133).getIndex(), pmd2.getIndex());
-		assertEquals(ipmp.getPokemonMetadata(133).getName(), pmd2.getName());
-		assertEquals(ipmp.getPokemonMetadata(133).getAttack(), pmd2.getAttack());
-		assertEquals(ipmp.getPokemonMetadata(133).getDefense(), pmd2.getDefense());
-		assertEquals(ipmp.getPokemonMetadata(133).getStamina(), pmd2.getStamina());
-	}
 
-	@Test(expected = PokedexException.class)
-	public void execptionIndex() throws PokedexException, IOException {
-		ipmp.getPokemonMetadata(-2);
+	@Test(expected=PokedexException.class)
+	public void testPokemonMetadata0NotFoundException() throws PokedexException {
+		ipmp.getPokemonMetadata(-1);
 	}
-	@Test(expected = PokedexException.class)
-	public void execptionIndexOut() throws PokedexException {
-		ipmp.getPokemonMetadata(155);	
+	
+	@Test(expected=PokedexException.class)
+	public void testPokemonMetadata151NotFoundException() throws PokedexException {
+		ipmp.getPokemonMetadata(151);
 	}
 	
 	@Before
@@ -52,5 +36,16 @@ public class IPokemonMetadataProviderTest {
 		Mockito.when(ipmp.getPokemonMetadata(155)).thenThrow(new PokedexException("Error: Index outOfBounds"));
 		
 	}
+	
+	@Test 
+	public void testPokemonMetadata() throws PokedexException{
+		PokemonMetadata pokemonMetadata = ipmp.getPokemonMetadata(0); 
+		assertEquals(126,pokemonMetadata.getAttack());
+		assertEquals(126,pokemonMetadata.getDefense());
+		assertEquals(0,pokemonMetadata.getIndex());
+		assertEquals("Bulbasaur",pokemonMetadata.getName());
+		assertEquals(90,pokemonMetadata.getStamina());
+	}
+	
 	
 }

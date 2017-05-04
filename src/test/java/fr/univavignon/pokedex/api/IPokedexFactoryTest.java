@@ -21,7 +21,7 @@ public class IPokedexFactoryTest {
     private IPokemonMetadataProvider mdp;
 
 	@Mock
-    private IPokedexFactory pxF;
+    protected IPokedexFactory pxF;
 
     @Mock
     private IPokedexFactory ipf;

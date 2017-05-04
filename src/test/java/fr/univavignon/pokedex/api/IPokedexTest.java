@@ -8,7 +8,7 @@ import java.util.*;
 public class IPokedexTest {
 
     @Mock
-    private IPokedex p;
+	protected IPokedex p;
 
     private int nb = 0;
     private List<Pokemon> list_pokemons = new ArrayList<Pokemon>(151);

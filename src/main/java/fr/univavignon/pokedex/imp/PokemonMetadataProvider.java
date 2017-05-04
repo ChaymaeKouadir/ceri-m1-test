@@ -7,10 +7,7 @@ import fr.univavignon.pokedex.api.*;
 
 public class PokemonMetadataProvider implements IPokemonMetadataProvider, Serializable {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = -4406239882126981838L;
 
 
 	public PokemonMetadata getPokemonMetadata(int index) throws PokedexException {
