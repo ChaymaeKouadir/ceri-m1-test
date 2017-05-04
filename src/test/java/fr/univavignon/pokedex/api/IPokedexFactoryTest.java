@@ -2,10 +2,7 @@ package fr.univavignon.pokedex.api;
 
 import static org.junit.Assert.*;
 
-import java.util.Comparator;
-
 import org.junit.*;
-import org.mockito.Mockito.*;
 import org.mockito.*;
 import java.io.IOException;
 

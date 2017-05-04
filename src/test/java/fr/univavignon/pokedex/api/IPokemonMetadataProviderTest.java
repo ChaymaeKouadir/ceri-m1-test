@@ -2,6 +2,8 @@ package fr.univavignon.pokedex.api;
 
 import static org.junit.Assert.assertEquals;
 
+import java.io.IOException;
+
 import org.junit.*;
 import org.mockito.*;
 
@@ -15,7 +17,7 @@ public final class IPokemonMetadataProviderTest {
 	
 	@Test
 	public void getPokemonMetadataTest() throws PokedexException {
-		//pokemon1
+		//pokemon1 :
 		assertEquals(ipmp.getPokemonMetadata(0).getIndex(), pmd1.getIndex());
 		assertEquals(ipmp.getPokemonMetadata(0).getName(), pmd1.getName());
 		assertEquals(ipmp.getPokemonMetadata(0).getAttack(), pmd1.getAttack());
@@ -31,7 +33,7 @@ public final class IPokemonMetadataProviderTest {
 	}
 
 	@Test(expected = PokedexException.class)
-	public void execptionIndex() throws PokedexException {
+	public void execptionIndex() throws PokedexException, IOException {
 		ipmp.getPokemonMetadata(-2);
 	}
 	@Test(expected = PokedexException.class)
