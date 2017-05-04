@@ -52,4 +52,12 @@ public interface IPokedex extends IPokemonMetadataProvider, IPokemonFactory {
 	 */
 	List<Pokemon> getPokemons(Comparator<Pokemon> order);
 	
+	public void setPokemonTrainer(PokemonTrainer pokemonTrainer);
+	
+	public void notifyPokemonTrainer();
+
+	
+	
+
+	
 }
