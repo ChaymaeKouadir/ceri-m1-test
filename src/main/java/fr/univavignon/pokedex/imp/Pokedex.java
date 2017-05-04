@@ -70,14 +70,15 @@ public class Pokedex implements IPokedex, Serializable{
 
 	@Override
 	public void setPokemonTrainer(PokemonTrainer pokemonTrainer) {
-		// TODO Auto-generated method stub
-		
+		if(pT != null)
+			{ pT.saveAsFile();}	
 	}
 
 	@Override
 	public void notifyPokemonTrainer() {
-		// TODO Auto-generated method stub
-		
+
+		this.pT = pT;
+
 	}
 
 
