@@ -30,7 +30,7 @@ public class PokemonFactory implements IPokemonFactory, Serializable {
 		}
 		
 		String name = pmd.getName();
-		int attack = pmd.getAttack();
+		int attack  = pmd.getAttack();
 		int defense = pmd.getDefense();
 		int stamina = pmd.getStamina();
 		double iv = calculating(name, cp, dust);

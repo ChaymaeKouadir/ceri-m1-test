@@ -77,7 +77,6 @@ public class Pokedex implements IPokedex, Serializable{
 	@Override
 	public void notifyPokemonTrainer() {
 
-		this.pT = pT;
 
 	}
 
