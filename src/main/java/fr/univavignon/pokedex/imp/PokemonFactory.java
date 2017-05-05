@@ -13,6 +13,7 @@ public class PokemonFactory implements IPokemonFactory, Serializable {
 	int nb=0;
 	
 	public double calculating(String name, int cp, int dust){
+		
 		return nb;
 	}
 
@@ -36,7 +37,4 @@ public class PokemonFactory implements IPokemonFactory, Serializable {
 		Pokemon pok = new Pokemon(index, name, attack, defense, stamina, cp, hp, dust, candy, iv);
 		return pok;
 	}
-
-	
-	
 }

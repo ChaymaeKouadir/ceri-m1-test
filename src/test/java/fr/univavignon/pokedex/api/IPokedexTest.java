@@ -13,8 +13,8 @@ public class IPokedexTest {
     private int nb = 0;
     private List<Pokemon> list_pokemons = new ArrayList<Pokemon>(151);
 
-    private Pokemon p1 = new Pokemon(0,"Bulbizarre",126,126,90,613,64,4000,4,56);
-    private Pokemon p2 = new Pokemon(133,"Aquali",186,168,260,2729,202,5000,4,100);
+    protected Pokemon p1 = new Pokemon(0,"Bulbizarre",126,126,90,613,64,4000,4,56);
+    protected Pokemon p2 = new Pokemon(133,"Aquali",186,168,260,2729,202,5000,4,100);
 	
 
 	@Test
