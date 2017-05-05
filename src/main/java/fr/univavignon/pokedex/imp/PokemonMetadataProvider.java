@@ -9,7 +9,7 @@ public class PokemonMetadataProvider implements IPokemonMetadataProvider, Serial
 
 	private static final long serialVersionUID = -4406239882126981838L;
 
-
+	@Override
 	public PokemonMetadata getPokemonMetadata(int index) throws PokedexException {
 		
 		if((index < 0) || (index > 150))
@@ -36,8 +36,7 @@ public class PokemonMetadataProvider implements IPokemonMetadataProvider, Serial
 				data.getInt("BaseAttack"), 
 				data.getInt("BaseDefense"), 
 				data.getInt("BaseStamina"));
-		return pmd;
-		
+				return pmd;
 	}
 	
 }
