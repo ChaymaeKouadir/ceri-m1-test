@@ -21,12 +21,12 @@ public class PokemonFactory implements IPokemonFactory, Serializable {
 	public Pokemon createPokemon(int index, int cp, int hp, int dust, int candy) {
 		
 		PokemonMetadataProvider pmp = new PokemonMetadataProvider();
-		PokemonMetadata pmd;
+		PokemonMetadata pmd = null;
 		
 		try {
 			pmd = pmp.getPokemonMetadata(index);
 		} catch (PokedexException e) {
-			return null;
+			e.printStackTrace();
 		}
 		
 		String name = pmd.getName();
