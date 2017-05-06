@@ -110,15 +110,4 @@ public class IPokedexTest{
 		
 		
 	}
-	@Test
-	public void addPokemonTest() {
-        assertEquals(p.addPokemon(p1), 0);
-        assertEquals(p.addPokemon(p2), 1);
-	}
-	
-	@Test
-	public void getPokemonsTest(){
-        List<Pokemon> l = p.getPokemons();
-        assertEquals(l, list_pokemons);
-	}
 }
