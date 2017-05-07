@@ -22,5 +22,7 @@ public class IPokemonTrainerFactoryTest {
 	public void createTrainerTest() {
 		assertEquals(pT, pokemonTrainerFactory.createTrainer("Trainer", Team.MYSTIC,  pF));
 	}
+
+	
     
 }
