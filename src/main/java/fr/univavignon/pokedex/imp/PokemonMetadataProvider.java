@@ -8,6 +8,18 @@ import fr.univavignon.pokedex.api.*;
 public class PokemonMetadataProvider implements IPokemonMetadataProvider, Serializable {
 
 	private static final long serialVersionUID = -4406239882126981838L;
+	
+public PokemonMetadata getPokemonMetadataFromJSONObject(JSONObject data) throws JSONException{
+		
+		PokemonMetadata pmd;
+		pmd = new PokemonMetadata(	
+				data.getInt("PkMn")-1,
+				data.getString("Identifier"), 
+				data.getInt("BaseAttack"), 
+				data.getInt("BaseDefense"), 
+				data.getInt("BaseStamina"));
+				return pmd;
+	}
 
 	@Override
 	public PokemonMetadata getPokemonMetadata(int index) throws PokedexException {
@@ -26,17 +38,4 @@ public class PokemonMetadataProvider implements IPokemonMetadataProvider, Serial
 		}
 	}
 
-	
-	public PokemonMetadata getPokemonMetadataFromJSONObject(JSONObject data) throws JSONException{
-		
-		PokemonMetadata pmd;
-		pmd = new PokemonMetadata(	
-				data.getInt("PkMn")-1,
-				data.getString("Identifier"), 
-				data.getInt("BaseAttack"), 
-				data.getInt("BaseDefense"), 
-				data.getInt("BaseStamina"));
-				return pmd;
-	}
-	
 }
