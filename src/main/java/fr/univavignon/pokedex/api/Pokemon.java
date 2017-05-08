@@ -86,5 +86,5 @@ public final class Pokemon extends PokemonMetadata implements Serializable {
 	public double getIv() {
 		return iv;
 	}
-	
+
 }

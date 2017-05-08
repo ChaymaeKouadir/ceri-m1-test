@@ -5,9 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.*;
 import org.mockito.*;
 
-
 public class IPokemonTrainerFactoryTest {
-
 
 	@Mock
 	protected IPokemonTrainerFactory ptF;
