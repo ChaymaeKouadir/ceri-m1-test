@@ -8,7 +8,7 @@ public class PokedexFactoryTest extends IPokedexFactoryTest {
 
 	@Before
 	public void setUp() {
-		this.setPxF(new PokedexFactory());
+		this.pxF=new PokedexFactory();
 	}
 
 }

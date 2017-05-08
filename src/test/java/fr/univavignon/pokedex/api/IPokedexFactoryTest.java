@@ -33,50 +33,11 @@ public class IPokedexFactoryTest {
     private Pokemon pokemon = new Pokemon(0, "Bulbizarre", 126, 126, 90, 613, 64, 4000, 4, 56);
 	private List<Pokemon> pokemons = new ArrayList<Pokemon>();
  
-    public IPokedexFactory getProvider() {
-
-        return pxF;
-    }
-
-    public IPokemonMetadataProvider getMdp() {
-        return pmp;
-    }
-
-    public void setMdp(IPokemonMetadataProvider pmp) {
-        this.pmp = pmp;
-    }
-
-    public IPokemonFactory getPf() {
-        return pf;
-    }
-
-    public void setPf(IPokemonFactory pf) {
-        this.pf = pf;
-    }
-
-    public IPokedex getP() {
-        return p;
-    }
-
-    public void setP(IPokedex p) {
-        this.p = p;
-    }
-
-    public IPokedexFactory getPxF() {
-        return pxF;
-    }
-
-    public void setPxF(IPokedexFactory pxF) {
-        this.pxF = pxF;
-    }
-    
     
     @Before
 	public void setUp() throws PokedexException {
 		pokemons.add(pokemon);
-		Mockito.when(pxF.createPokedex(pmp, pf)).thenReturn(p);
 		
-		Mockito.when(pmp.getPokemonMetadata(0)).thenReturn(new PokemonMetadata(0,"Bulbizarre",126,126,90));
 		Mockito.when(pf.createPokemon(0, 613, 64, 4000, 4)).thenReturn(pokemon);
 	
 		Mockito.when(p.size()).thenReturn(0);
@@ -86,6 +47,16 @@ public class IPokedexFactoryTest {
 	}
 	
     
+   /* @Test 
+	public void testCreatePokedex() throws PokedexException{
+		
+		IPokedex pokedex = pxF.createPokedex(pmp, pf);
+		assertEquals(0, pokedex.size());
+		assertEquals(0, pokedex.addPokemon(pokemon));
+		assertEquals(pokemon, pokedex.getPokemon(0));
+		assertEquals(1, pokedex.getPokemons().size());
+		
+	}*/
    
    
 }
