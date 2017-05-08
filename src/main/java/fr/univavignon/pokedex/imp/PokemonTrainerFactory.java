@@ -4,7 +4,7 @@ import fr.univavignon.pokedex.api.*;
 
 public class PokemonTrainerFactory implements IPokemonTrainerFactory {
 	private static PokemonTrainerFactory instance;
-	
+
 	@Override
 	public PokemonTrainer createTrainer(String name, Team team, IPokedexFactory pokedexFactory) {
 		IPokemonMetadataProvider mp = new PokemonMetadataProvider(); 
