@@ -68,7 +68,5 @@ public class Pokedex implements IPokedex, Serializable{
 		return pF.createPokemon(index, cp, hp, dust, candy);
 	}
 
-	@Override
-	public void setPokemonTrainer(PokemonTrainer pT) {
-	}
+
 }

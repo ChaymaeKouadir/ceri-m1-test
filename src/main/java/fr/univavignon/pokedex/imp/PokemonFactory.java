@@ -10,11 +10,9 @@ public class PokemonFactory implements IPokemonFactory, Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 7493080326984188907L;
-	int nb=0;
 	
 	public double calculating(String name, int cp, int dust){
-		
-		return nb;
+		return 0;
 	}
 
 	@Override

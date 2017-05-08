@@ -10,8 +10,6 @@ public class PokemonTrainerFactory implements IPokemonTrainerFactory {
 		IPokemonMetadataProvider mp = new PokemonMetadataProvider(); 
 		IPokemonFactory pf = new PokemonFactory();
 		IPokedex pokedex = pokedexFactory.createPokedex(mp, pf);
-		PokemonTrainer pT = new PokemonTrainer(name, team, pokedex);
-		pokedex.setPokemonTrainer(pT);
 		return new PokemonTrainer(name, team, pokedex);
 	}
 	private PokemonTrainerFactory(){}

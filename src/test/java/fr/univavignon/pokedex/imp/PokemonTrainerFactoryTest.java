@@ -25,8 +25,6 @@ public class PokemonTrainerFactoryTest extends IPokemonTrainerFactoryTest {
 			IPokemonMetadataProvider mp = new PokemonMetadataProvider(); 
 			IPokemonFactory pokemonFactory = new PokemonFactory();	
 			IPokedex p = pokedexFactory.createPokedex(mp, pokemonFactory);
-			PokemonTrainer pT = new PokemonTrainer(name, team, p);
-			p.setPokemonTrainer(pT);
 			return new PokemonTrainer(name, team, p);
 			
 		} finally {
