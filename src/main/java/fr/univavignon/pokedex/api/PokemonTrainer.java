@@ -51,4 +51,11 @@ public class PokemonTrainer implements Serializable{
 		return pokedex;
 	}
 
+	@Override
+	public boolean equals(Object t){
+		if(!(t instanceof PokemonTrainer))return false;
+		if((this.getTeam() != ((PokemonTrainer) t).getTeam()))return false;
+		if(!this.name.equals(((PokemonTrainer) t).getName()))return false;
+		return true;
+	}
 }
