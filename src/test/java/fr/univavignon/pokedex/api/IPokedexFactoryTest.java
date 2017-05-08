@@ -71,7 +71,20 @@ public class IPokedexFactoryTest {
     }
     
     
-
+    @Before
+	public void setUp() throws PokedexException {
+		pokemons.add(pokemon);
+		Mockito.when(pxF.createPokedex(pmp, pf)).thenReturn(p);
+		
+		Mockito.when(pmp.getPokemonMetadata(0)).thenReturn(new PokemonMetadata(0,"Bulbizarre",126,126,90));
+		Mockito.when(pf.createPokemon(0, 613, 64, 4000, 4)).thenReturn(pokemon);
+	
+		Mockito.when(p.size()).thenReturn(0);
+		Mockito.when(p.addPokemon(pokemon)).thenReturn(0);
+		Mockito.when(p.getPokemon(0)).thenReturn(pokemon);
+		Mockito.when(p.getPokemons()).thenReturn(pokemons);
+	}
+	
     
    
    
