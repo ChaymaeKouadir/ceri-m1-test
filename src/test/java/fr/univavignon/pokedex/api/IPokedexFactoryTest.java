@@ -1,13 +1,10 @@
 package fr.univavignon.pokedex.api;
 
-import static org.junit.Assert.*;
-import fr.univavignon.pokedex.imp.*;
 import org.junit.*;
 import org.mockito.*;
 
 import java.util.List;
 
-import java.io.IOException;
 import java.util.ArrayList;
 
 

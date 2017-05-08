@@ -12,14 +12,14 @@ public class Pokedex implements IPokedex, Serializable{
 	 * 
 	 */
 	private static final long serialVersionUID = 4676586567250936637L;
-	private IPokemonMetadataProvider pmd; 	
+	private IPokemonMetadataProvider pmp; 	
 	private IPokemonFactory pF;
 	private Map<Integer,Pokemon> pMap; 
 	private PokemonTrainer pT;
 	
-	public Pokedex(IPokemonMetadataProvider pmd, IPokemonFactory pF) {
+	public Pokedex(IPokemonMetadataProvider pmp, IPokemonFactory pF) {
 		super();
-		this.pmd = pmd;
+		this.pmp = pmp;
 		this.pF = pF;
 		this.pMap = new LinkedHashMap<Integer,Pokemon>();
 	}
@@ -63,7 +63,7 @@ public class Pokedex implements IPokedex, Serializable{
 
 	@Override
 	public PokemonMetadata getPokemonMetadata(int index) throws PokedexException {
-		return pmd.getPokemonMetadata(index);
+		return pmp.getPokemonMetadata(index);
 	}
 	
 	@Override
