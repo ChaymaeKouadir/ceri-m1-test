@@ -23,9 +23,6 @@ public class IPokedexFactoryTest {
 
 	@Mock
     protected IPokedexFactory pxF;
-
-    @Mock
-    private IPokedexFactory ipf;
     
     private Pokemon pokemon = new Pokemon(0, "Bulbizarre", 126, 126, 90, 613, 64, 4000, 4, 56);
 	private List<Pokemon> pokemons = new ArrayList<Pokemon>();

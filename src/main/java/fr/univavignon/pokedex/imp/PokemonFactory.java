@@ -24,7 +24,7 @@ public class PokemonFactory implements IPokemonFactory, Serializable {
 		try {
 			pmd = pmp.getPokemonMetadata(index);
 		} catch (PokedexException e) {
-			e.printStackTrace();
+			return null;
 		}
 		
 		String name = pmd.getName();

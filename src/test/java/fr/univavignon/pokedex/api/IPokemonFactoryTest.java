@@ -23,7 +23,7 @@ public class IPokemonFactoryTest {
 		MockitoAnnotations.initMocks(this);
 		p1 = new Pokemon(0,"Bulbassaur",126,126,90,613,64,4000,4,0);
 		Mockito.when(pF.createPokemon(0, 613, 64, 4000, 4)).thenReturn(p1);
-
+		Mockito.when(pF.createPokemon(-1, 613, 64, 4000, 4)).thenReturn(null);
 	}
 
 	@Test
@@ -38,6 +38,11 @@ public class IPokemonFactoryTest {
 		assertEquals(tmp.getHp(), p1.getHp());
 		assertEquals(tmp.getDust(), p1.getDust());
 		assertEquals(tmp.getIv(), p1.getIv(), 0);
+	}
+	
+	@Test
+	public void testErreur() throws Exception{
+		assertNull(pF.createPokemon(-1, 613, 64, 4000, 4));
 	}
 
 }
