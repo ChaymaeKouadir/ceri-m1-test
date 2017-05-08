@@ -15,8 +15,6 @@ public class Pokedex implements IPokedex, Serializable{
 	private IPokemonMetadataProvider pmp; 	
 	private IPokemonFactory pF;
 	private Map<Integer,Pokemon> pMap; 
-	private PokemonTrainer pT;
-	
 	public Pokedex(IPokemonMetadataProvider pmp, IPokemonFactory pF) {
 		super();
 		this.pmp = pmp;
@@ -42,7 +40,6 @@ public class Pokedex implements IPokedex, Serializable{
 	public int addPokemon(Pokemon pokemon) {
 		Integer place = size();
 		pMap.put(size(), pokemon);
-		notifyPokemonTrainer();
 		return place;
 	}
 
@@ -73,14 +70,5 @@ public class Pokedex implements IPokedex, Serializable{
 
 	@Override
 	public void setPokemonTrainer(PokemonTrainer pT) {
-		this.pT = pT;
 	}
-
-	@Override
-	public void notifyPokemonTrainer() {
-
-		if(pT != null) pT.saveAsFile();
-	}
-
-
 }

@@ -1,8 +1,5 @@
 package fr.univavignon.pokedex.api;
 
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
 /**
@@ -53,30 +50,4 @@ public class PokemonTrainer implements Serializable{
 	public IPokedex getPokedex() {
 		return pokedex;
 	}
-	
-	public void saveAsFile(){
-			ObjectOutputStream oS = null;
-			
-			try {
-					final FileOutputStream file = new FileOutputStream(".\\trainers\\"+name+".ser");
-					oS = new ObjectOutputStream(file);
-					oS.writeObject(this);
-					oS.flush();
-					
-			} catch (Exception e) {
-				
-					e.printStackTrace();  
-			} finally {
-				
-					try {
-						if (oS != null) {
-							oS.flush();
-							oS.close();
-					}
-				} catch (final IOException ex) {
-						ex.printStackTrace();	
-				}
-			}
-	}
-	
 }

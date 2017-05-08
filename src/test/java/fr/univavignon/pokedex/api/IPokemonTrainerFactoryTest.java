@@ -31,7 +31,6 @@ public class IPokemonTrainerFactoryTest {
 
 	@Test 
 	public void testPokemonTrainer() throws PokedexException {
-		
 		PokemonTrainer pokemonTrainer = ptF.createTrainer("trainer1", Team.INSTINCT, pF);
 		assertEquals("trainer1", pokemonTrainer.getName());
 		assertEquals(Team.INSTINCT, pokemonTrainer.getTeam());
