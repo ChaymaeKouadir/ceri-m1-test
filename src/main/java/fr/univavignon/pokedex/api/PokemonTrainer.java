@@ -3,13 +3,19 @@ package fr.univavignon.pokedex.api;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
+import java.io.Serializable;
 
 /**
  * Trainer POJO.
  * 
  * @author fv
  */
-public class PokemonTrainer {
+public class PokemonTrainer implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 9213027062202254017L;
 
 	/** Trainer name. **/
 	private final String name;

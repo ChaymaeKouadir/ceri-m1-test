@@ -6,11 +6,12 @@ import fr.univavignon.pokedex.api.*;
 
 public class Pokedex implements IPokedex, Serializable{
 	
+
+	
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
-	
+	private static final long serialVersionUID = 4676586567250936637L;
 	private IPokemonMetadataProvider pmd; 	
 	private IPokemonFactory pF;
 	private Map<Integer,Pokemon> pMap; 
@@ -29,14 +30,6 @@ public class Pokedex implements IPokedex, Serializable{
 	}
 
 	@Override
-	public int addPokemon(Pokemon pokemon) {
-		Integer place = size();
-		pMap.put(size(), pokemon);
-		notifyPokemonTrainer();
-		return place;
-	}
-
-	@Override
 	public Pokemon getPokemon(int id) throws PokedexException {
 		if(!pMap.containsKey(id))
 			throw new PokedexException("The Pokemon is unavailable");
@@ -44,6 +37,16 @@ public class Pokedex implements IPokedex, Serializable{
 			return pMap.get(id);
 		
 	}
+	
+	@Override
+	public int addPokemon(Pokemon pokemon) {
+		Integer place = size();
+		pMap.put(size(), pokemon);
+		notifyPokemonTrainer();
+		return place;
+	}
+
+
 
 	@Override
 	public List<Pokemon> getPokemons() {
@@ -69,15 +72,14 @@ public class Pokedex implements IPokedex, Serializable{
 	}
 
 	@Override
-	public void setPokemonTrainer(PokemonTrainer pokemonTrainer) {
-		if(pT != null)
-			{ pT.saveAsFile();}	
+	public void setPokemonTrainer(PokemonTrainer pT) {
+		this.pT = pT;
 	}
 
 	@Override
 	public void notifyPokemonTrainer() {
 
-
+		if(pT != null) pT.saveAsFile();
 	}
 
 
