@@ -1,10 +1,13 @@
 package fr.univavignon.pokedex.api;
 
 import static org.junit.Assert.*;
-
+import fr.univavignon.pokedex.api.*;
 import org.junit.*;
 import org.mockito.*;
+
+import java.awt.List;
 import java.io.IOException;
+import java.util.ArrayList;
 
 
 
@@ -25,8 +28,7 @@ public class IPokedexFactoryTest {
 
     @Mock
     private IPokedexFactory ipf;
-
-    
+ 
     public IPokedexFactory getProvider() {
 
         return pxF;
@@ -64,16 +66,9 @@ public class IPokedexFactoryTest {
         this.pxF = pxF;
     }
     
-    @Before
-    public void setUp() throws PokedexException, IOException {
-        MockitoAnnotations.initMocks(this);
-        Mockito.when(pxF.createPokedex(mdp, pf)).thenReturn(p);
-    }
+ 
     
-    @Test
-    public void createPokedexTest() throws IOException {
-        assertNotNull(getProvider().createPokedex(mdp, pf));
-    }
+
 
    
 }
