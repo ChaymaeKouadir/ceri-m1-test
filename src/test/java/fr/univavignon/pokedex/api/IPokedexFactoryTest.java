@@ -1,11 +1,12 @@
 package fr.univavignon.pokedex.api;
 
 import static org.junit.Assert.*;
-import fr.univavignon.pokedex.api.*;
+import fr.univavignon.pokedex.imp.*;
 import org.junit.*;
 import org.mockito.*;
 
-import java.awt.List;
+import java.util.List;
+
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -21,13 +22,16 @@ public class IPokedexFactoryTest {
     private IPokemonFactory pf;
 	
 	@Mock
-    private IPokemonMetadataProvider mdp;
+    private IPokemonMetadataProvider pmp;
 
 	@Mock
     protected IPokedexFactory pxF;
 
     @Mock
     private IPokedexFactory ipf;
+    
+    private Pokemon pokemon = new Pokemon(0, "Bulbizarre", 126, 126, 90, 613, 64, 4000, 4, 56);
+	private List<Pokemon> pokemons = new ArrayList<Pokemon>();
  
     public IPokedexFactory getProvider() {
 
@@ -35,11 +39,11 @@ public class IPokedexFactoryTest {
     }
 
     public IPokemonMetadataProvider getMdp() {
-        return mdp;
+        return pmp;
     }
 
-    public void setMdp(IPokemonMetadataProvider mdp) {
-        this.mdp = mdp;
+    public void setMdp(IPokemonMetadataProvider pmp) {
+        this.pmp = pmp;
     }
 
     public IPokemonFactory getPf() {
@@ -66,16 +70,31 @@ public class IPokedexFactoryTest {
         this.pxF = pxF;
     }
     
-    @Before
-    public void setUp() throws PokedexException, IOException {
-        MockitoAnnotations.initMocks(this);
-        Mockito.when(pxF.createPokedex(mdp, pf)).thenReturn(p);
-    }
     
-    @Test
-    public void createPokedexTest() throws IOException {
-        assertNotNull(getProvider().createPokedex(mdp, pf));
-    }
-
+    @Test 
+	public void testCreatePokedex() throws PokedexException{
+		
+		IPokedex pokedex = pxF.createPokedex(pmp, pf);
+		assertEquals(0, pokedex.size());
+		assertEquals(0, pokedex.addPokemon(pokemon));
+		assertEquals(pokemon, pokedex.getPokemon(0));
+		assertEquals(1, pokedex.getPokemons().size());
+		
+	}
+    
+    @Before
+	public void setUp() throws PokedexException {
+		pokemons.add(pokemon);
+		Mockito.when(pxF.createPokedex(pmp, pf)).thenReturn(p);
+		
+		Mockito.when(pmp.getPokemonMetadata(0)).thenReturn(new PokemonMetadata(0,"Bulbizarre",126,126,90));
+		Mockito.when(pf.createPokemon(0, 613, 64, 4000, 4)).thenReturn(pokemon);
+	
+		Mockito.when(p.size()).thenReturn(0);
+		Mockito.when(p.addPokemon(pokemon)).thenReturn(0);
+		Mockito.when(p.getPokemon(0)).thenReturn(pokemon);
+		Mockito.when(p.getPokemons()).thenReturn(pokemons);
+	}
+	
    
 }
