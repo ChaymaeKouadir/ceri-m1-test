@@ -66,9 +66,16 @@ public class IPokedexFactoryTest {
         this.pxF = pxF;
     }
     
- 
+    @Before
+    public void setUp() throws PokedexException, IOException {
+        MockitoAnnotations.initMocks(this);
+        Mockito.when(pxF.createPokedex(mdp, pf)).thenReturn(p);
+    }
     
-
+    @Test
+    public void createPokedexTest() throws IOException {
+        assertNotNull(getProvider().createPokedex(mdp, pf));
+    }
 
    
 }
