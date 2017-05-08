@@ -50,4 +50,5 @@ public class PokemonTrainer implements Serializable{
 	public IPokedex getPokedex() {
 		return pokedex;
 	}
+
 }
